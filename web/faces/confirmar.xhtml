@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+      <h:head xmlns:h="http://java.sun.com/jsf/html"
+              xmlns:f="http://java.sun.com/jsf/core">
+        <title>Una aplicación simple JavaServer Faces:CONFIRMAR</title>
+      </h:head>
+<h:body>
+  <h:form>
+    <h2>Escriba a continuación el sus datos y el mensaje a enviar</h2>
+    <h4>Formulario de envio</h4>
+    <table>
+      <tr>
+        <td>Remitente:</td>
+        <td>
+            <h:outputText   id="fremitente" value="#{beanMensaje.remitente}" />
+      
+        </td>
+      </tr>
+      <tr>
+        <td>Sexo:</td>
+        <td>
+          <h:outputText id="sex" value="#{beanMensaje.sex}"/>
+          </td>
+      </tr>
+      <tr>
+        <td>Fecha:</td>
+        <td>
+          <h:outputText id="Fecha" value="#{beanMensaje.fecha}"/>(dd/MM/yyyy)
+          <!--          &#35;{beanMensaje.fecha} (dd/MM/yyyy)-->
+          <!--  &#35; es el código de escape para la almohadilla #
+          Muestra lo mismo , pero con <h:ouputText puede añadir 
+                        atributos recomendables por ejemplo para usar CSS, o 
+                        acceder con JavaScript-->
+
+        </td>
+      </tr>
+      <tr>
+        <td>Correo electrónico:</td>
+        <td>
+          <h:outputText id="email" value="#{beanMensaje.email}"/>
+          </td>
+      </tr>
+      <tr>
+        <td>Tipo Mensaje:</td>
+        <td>
+            <h:outputText id="Tipo" value="#{beanMensaje.tipoMensaje}"/>            
+        </td>
+      </tr>
+      <tr>
+        <td>Mensaje:</td>
+        <td>
+            <h:outputText id="mensaje" value="#{beanMensaje.mensaje}"/>
+         </td>
+      </tr>
+    </table>
+        <p/>
+        <h:commandButton value="Editar" action="mensaje" />
+        <h:commandButton value="Confirmar" action="#{beanMensaje.enviarMensaje}" />
+        <p/>
+  </h:form>
+</h:body>
+</html>
+
